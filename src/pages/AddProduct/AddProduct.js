@@ -1,5 +1,6 @@
 import { addDoc, collection } from 'firebase/firestore';
 import React, { useState } from 'react';
+import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { db } from '../../firebase/firebase.config';
 
@@ -18,6 +19,7 @@ const AddProduct = () => {
     const handleAddProduct = async () => {
         await addDoc(productsCollectionRef, { name, img, price, review, description })
         navigate('/')
+        toast.success('Product Added')
     }
 
     return (

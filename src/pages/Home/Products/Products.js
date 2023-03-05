@@ -14,9 +14,7 @@ const Products = () => {
             setProducts(data.docs.map(doc => ({ ...doc.data(), id: doc.id })))
         }
         getProducts()
-    }, [productsCollectionRef])
-
-    console.log(products);
+    }, [])
 
     return (
         <div className='w-10/12 mx-auto my-20'>

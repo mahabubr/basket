@@ -50,7 +50,7 @@ const SignUp = () => {
         <div className='h-screen w-10/12 md:w-8/12 lg:w-6/12 mx-auto flex justify-center items-center'>
             <div className='bg-amber-100 p-10 rounded-lg'>
                 <h2 className='text-3xl font-bold text-center'>Register</h2>
-                <p className='text-center text-slate-600'>Already have an account ? <Link className='font-bold text-sky-700'>Login Here</Link></p>
+                <p className='text-center text-slate-600'>Already have an account ? <Link to='/login' className='font-bold text-sky-700'>Login Here</Link></p>
                 <form onSubmit={handleSubmit(onSubmit)} className='mt-4'>
                     <div className="form-control w-full">
                         <label htmlFor='name' className="label">
@@ -86,7 +86,7 @@ const SignUp = () => {
                         <label htmlFor='email' className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input {...register("email", { required: true, maxLength: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/ })} id='email' type="email" placeholder="Drop Your Link" className="input w-full" />
+                        <input {...register("email", { required: true, maxLength: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/ })} id='email' type="email" placeholder="Your Email" className="input w-full" />
                         {
                             (errors.email?.type === 'required' || errors.email?.type === 'maxLength') &&
                             <div className="alert alert-error shadow-lg p-1 rounded-none">
